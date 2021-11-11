@@ -14,15 +14,15 @@
 7 verbose currentBranch main
 8 silly remoteBranchExists
 9 silly isBehindUpstream
-10 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 2
+10 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 3
 11 silly hasTags
 12 verbose hasTags false
 13 info Assuming all packages changed
 14 verbose updated @petarnenov/cli
 15 verbose updated @petarnenov/local-api
 16 verbose updated @petarnenov/local-client
-17 verbose git-describe undefined => "1edbe93"
-18 silly git-describe parsed => {"refCount":"6","sha":"1edbe93","isDirty":false}
+17 verbose git-describe undefined => "d7c3b15"
+18 silly git-describe parsed => {"refCount":"7","sha":"d7c3b15","isDirty":false}
 19 silly independent for @petarnenov/cli at /home/petar/nodejs/ts/react/ts/jbook/packages/cli
 20 verbose getChangelogConfig using preset "conventional-changelog-angular"
 21 silly npa Result {
@@ -42,11 +42,11 @@
 21 silly npa }
 22 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
 23 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
-24 verbose independent increment 1.0.0 by minor
+24 verbose independent increment 1.1.0 by minor
 25 silly independent for @petarnenov/local-api at /home/petar/nodejs/ts/react/ts/jbook/packages/local-api
-26 verbose independent increment 1.0.0 by minor
+26 verbose independent increment 1.1.0 by minor
 27 silly independent for @petarnenov/local-client at /home/petar/nodejs/ts/react/ts/jbook/packages/local-client
-28 verbose independent increment 0.1.0 by patch
+28 verbose independent increment 0.1.1 by patch
 29 info execute Skipping releases
 30 silly lifecycle No script for "preversion" in "root", continuing
 31 silly lifecycle No script for "preversion" in "@petarnenov/cli", continuing
@@ -56,13 +56,13 @@
 35 silly independent for @petarnenov/cli at /home/petar/nodejs/ts/react/ts/jbook/packages/cli
 36 silly lifecycle No script for "version" in "@petarnenov/local-api", continuing
 37 silly independent for @petarnenov/local-api at /home/petar/nodejs/ts/react/ts/jbook/packages/local-api
-38 silly independent writing new entry: "# 1.1.0 (2021-11-11)\n\n\n### Features\n\n* add cli implementation ([72d86a0](https://github.com/petarnenov/portfolioProject/commit/72d86a0042c5625a11a1606c68d9b68701577024))\n\n\n\n"
-39 silly independent writing new entry: "# 1.1.0 (2021-11-11)\n\n\n### Features\n\n* add cli implementation ([72d86a0](https://github.com/petarnenov/portfolioProject/commit/72d86a0042c5625a11a1606c68d9b68701577024))\n\n\n\n"
+38 silly independent writing new entry: "# 1.2.0 (2021-11-11)\n\n\n### Features\n\n* add cli implementation ([72d86a0](https://github.com/petarnenov/portfolioProject/commit/72d86a0042c5625a11a1606c68d9b68701577024))\n\n\n\n"
+39 silly independent writing new entry: "# 1.2.0 (2021-11-11)\n\n\n### Features\n\n* add cli implementation ([72d86a0](https://github.com/petarnenov/portfolioProject/commit/72d86a0042c5625a11a1606c68d9b68701577024))\n\n\n\n"
 40 verbose independent wrote /home/petar/nodejs/ts/react/ts/jbook/packages/cli/CHANGELOG.md
 41 verbose independent wrote /home/petar/nodejs/ts/react/ts/jbook/packages/local-api/CHANGELOG.md
 42 silly lifecycle No script for "version" in "@petarnenov/local-client", continuing
 43 silly independent for @petarnenov/local-client at /home/petar/nodejs/ts/react/ts/jbook/packages/local-client
-44 silly independent writing new entry: "## 0.1.1 (2021-11-11)\n\n**Note:** Version bump only for package @petarnenov/local-client\n\n\n\n"
+44 silly independent writing new entry: "## 0.1.2 (2021-11-11)\n\n**Note:** Version bump only for package @petarnenov/local-client\n\n\n\n"
 45 verbose independent wrote /home/petar/nodejs/ts/react/ts/jbook/packages/local-client/CHANGELOG.md
 46 silly lifecycle No script for "version" in "root", continuing
 47 silly gitAdd [
