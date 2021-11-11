@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "@petarnenov/cli",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -16,5 +16,6 @@
   "devDependencies": {
     "@types/node": "^16.11.7",
     "typescript": "^4.4.4"
-  }
+  },
+  "repository": "https://github.com/petarnenov/portfolioProject"
 }
