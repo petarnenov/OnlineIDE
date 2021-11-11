@@ -1,11 +1,11 @@
 {
-  "name": "local-api",
+  "name": "@petarnenov/local-api",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start":"tsc --watch --preserveWatchOutput",
+    "start": "tsc --watch --preserveWatchOutput",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^4.4.4"
-  }
+  },
+  "repository": "https://github.com/petarnenov/portfolioProject"
 }
