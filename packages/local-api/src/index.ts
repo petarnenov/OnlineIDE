@@ -1,16 +1,35 @@
+import path from 'path';
 import express from 'express';
-import cores from 'cors';
-import proxy from 'http-proxy-middleware';
+import cors from 'cors';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import { createCellsRouter } from './routes';
 
 export interface ServeConfig {
   port: number;
   filename: string;
   dir: string;
+  useProxy: boolean;
 }
 
 export const serve = (serveConfig: ServeConfig) => {
+  const { port, filename, dir, useProxy } = serveConfig;
   const app = express();
-  const { port, filename, dir } = serveConfig;
+  app.use(express.json())
+  if (useProxy) {
+    const packagePath = require.resolve('local-client/build/index.html');
+    app.use(express.static(path.dirname(packagePath)));
+  } else {
+    app.use(
+      createProxyMiddleware({
+        target: 'http://localhost:3000',
+        ws: true,
+        logLevel: 'silent',
+      })
+    );
+  }
+
+  app.use("/cells",createCellsRouter(filename,dir))
+
   return new Promise<void>((resolve, reject) => {
     app.listen(port, resolve).on('error', reject);
   });

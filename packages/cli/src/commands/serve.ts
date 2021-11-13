@@ -12,8 +12,9 @@ export const serveCommand = new Command()
     try {
       const port = parseInt(options.port);
       const dir = path.join(process.cwd(), path.dirname(filename));
+      const useProxy = process.env.NODE_ENV === ' production';
 
-      await serve({ filename: path.basename(filename), port, dir });
+      await serve({ filename: path.basename(filename), port, dir, useProxy });
       console.log(
         `Opened file ${filename}. Navigate to http://localhost:${port} to edit the file.`
       );

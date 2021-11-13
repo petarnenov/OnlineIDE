@@ -34,8 +34,7 @@
     "eject": "react-scripts eject",
     "format": "prettier ./src -w",
     "format:check": "prettier --check ./src",
-    "build:check": "tsc --noEmit",
-    "prepare": "husky install",
+    "build:check": "tsc --noEmit",    
     "serve": "node local-api.js"
   },
   "eslintConfig": {
@@ -59,10 +58,10 @@
   "devDependencies": {
     "@types/localforage": "^0.0.34",
     "@types/react-redux": "^7.1.20",
-    "@types/react-resizable": "^1.7.4",
-    "husky": "^7.0.4",
+    "@types/react-resizable": "^1.7.4",  
     "monaco-editor": "^0.30.0",
     "prettier": "^2.4.1"
   },
+  "types": "build/index.d.ts",
   "repository": "https://github.com/petarnenov/portfolioProject"
 }
