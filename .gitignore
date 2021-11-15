@@ -4,3 +4,4 @@
 /**/build
 lerna-debug.log
 /**/.vscode
+/**/.husky
