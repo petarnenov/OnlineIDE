@@ -13,6 +13,7 @@
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
     "format": "prettier ./src -w",
+    "format:check": "prettier --check ./src",
     "build:check": "tsc --noEmit",
     "prepublishOnly": "tsc"
   },
