@@ -1,14 +1,20 @@
 {
-  "name": "local-api",
+  "name": "@pnp-js/local-api",
   "version": "1.4.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
     "format": "prettier ./src -w",
     "build:check": "tsc --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +29,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http-proxy-middleware": "^2.0.1",
-    "local-client": "^0.2.0"
+    "@pnp-js/local-client": "^0.2.0"
   }
 }

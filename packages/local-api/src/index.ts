@@ -21,7 +21,9 @@ export const serve = (serveConfig: ServeConfig) => {
   app.use("/cells", createCellsRouter(filename, dir));
 
   if (useProxy) {
-    const packagePath = require.resolve("local-client/build/index.html");
+    const packagePath = require.resolve(
+      "@pnp-js/local-client/build/index.html"
+    );
     app.use(express.static(path.dirname(packagePath)));
   } else {
     app.use(

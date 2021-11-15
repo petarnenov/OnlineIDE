@@ -1,7 +1,42 @@
 {
-  "name": "local-client",
+  "name": "@pnp-js/local-client",
   "version": "0.2.0",
-  "dependencies": {
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },  
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier ./src -w",
+    "format:check": "prettier --check ./src",
+    "build:check": "tsc --noEmit",
+    "serve": "node local-api.js",
+    "prepublishOnly": "npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@monaco-editor/react": "^4.3.1",
     "@reduxjs/toolkit": "^1.6.2",
@@ -25,37 +60,7 @@
     "react-resizable": "^3.0.4",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier ./src -w",
-    "format:check": "prettier --check ./src",
-    "build:check": "tsc --noEmit",
-    "serve": "node local-api.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
+    "web-vitals": "^1.0.1",
     "@types/localforage": "^0.0.34",
     "@types/react-redux": "^7.1.20",
     "@types/react-resizable": "^1.7.4",

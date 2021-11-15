@@ -1,6 +1,6 @@
 import path from "path";
 import { Command } from "commander";
-import { serve } from "local-api";
+import { serve } from "@pnp-js/local-api";
 
 export type ServeCommandOptions = { port: string };
 
@@ -12,7 +12,7 @@ export const serveCommand = new Command()
     try {
       const port = parseInt(options.port);
       const dir = path.join(process.cwd(), path.dirname(filename));
-      const useProxy = process.env.NODE_ENV === " production";
+      const useProxy = process.env.NODE_ENV === "production";
 
       await serve({ filename: path.basename(filename), port, dir, useProxy });
       console.log(
