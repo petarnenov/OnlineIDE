@@ -1,6 +1,6 @@
 {
   "name": "@pnp-js/local-api",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,7 +27,7 @@
   },
   "repository": "https://github.com/petarnenov/portfolioProject",
   "dependencies": {
-    "@pnp-js/local-client": "^0.3.1",
+    "@pnp-js/local-client": "^0.3.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http-proxy-middleware": "^2.0.1"

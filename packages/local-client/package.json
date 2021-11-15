@@ -1,6 +1,6 @@
 {
   "name": "@pnp-js/local-client",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "build/index.html",
   "files": [
     "build"
