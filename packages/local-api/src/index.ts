@@ -14,7 +14,12 @@ export interface ServeConfig {
 export const serve = (serveConfig: ServeConfig) => {
   const { port, filename, dir, useProxy } = serveConfig;
   const app = express();
-  app.use(express.json())
+
+  app.use(cors());
+  app.use(express.json());
+  
+  app.use('/cells', createCellsRouter(filename, dir));
+
   if (useProxy) {
     const packagePath = require.resolve('local-client/build/index.html');
     app.use(express.static(path.dirname(packagePath)));
@@ -27,8 +32,6 @@ export const serve = (serveConfig: ServeConfig) => {
       })
     );
   }
-
-  app.use("/cells",createCellsRouter(filename,dir))
 
   return new Promise<void>((resolve, reject) => {
     app.listen(port, resolve).on('error', reject);

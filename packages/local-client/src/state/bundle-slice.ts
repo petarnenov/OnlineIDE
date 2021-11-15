@@ -50,7 +50,7 @@ export const createBundle = createAsyncThunk<
   return result;
 });
 
-interface BundlesState {
+export interface BundlesState {
   [key: string]:
     | {
         loading: boolean;

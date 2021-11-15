@@ -27,8 +27,9 @@ export const createCellsRouter = (filename: string, dir: string) => {
 
   router.post('/', async (req, res) => {
     const { cells }: { cells: Cell[] } = req.body;
-    console.log(req.body);
+    console.log("api post call: ",req.body,dir,filename);
     const dataToWrite = JSON.stringify(cells);
+    console.log("data to write: ",dataToWrite)
     await writeFile(path.join(dir, filename), dataToWrite, 'utf-8');
     res.send('Cells are write to file');
   });

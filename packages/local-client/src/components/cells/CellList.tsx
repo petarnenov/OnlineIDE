@@ -1,6 +1,6 @@
 import './cell-list.css';
-import React, { Fragment } from 'react';
-import { useAppSelector } from '../../hooks';
+import React, { Fragment, useEffect } from 'react';
+import { useActions, useAppSelector } from '../../hooks';
 import AddCell from './AddCell';
 import CellListItem from './CellListItem';
 
@@ -13,6 +13,12 @@ const CellList: React.FC<CellListProps> = () => {
     } = state;
     return order.map((id) => data[id]);
   });
+
+  const { fetchCells } = useActions();
+  useEffect(() => {
+    fetchCells();
+  }, [fetchCells]);
+
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
       <CellListItem cell={cell} />

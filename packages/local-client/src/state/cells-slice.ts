@@ -1,13 +1,41 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { RootState } from '.';
 import { ActionType } from './action-types';
 
-interface CellState {
+export const fetchCells = createAsyncThunk<Cell[], void, { state: RootState }>(
+  'fetchCells',
+  async () => {
+    const result: Cell[] = await (await fetch('/cells')).json();
+    console.error('result: ', result);
+    return result;
+  }
+);
+
+export const postCells = createAsyncThunk<void, void, { state: RootState }>(
+  'postCells',
+  async (_, { getState }) => {
+    const { order, data } = getState().cells;
+    const cells = order.map((key) => data[key]);
+    console.log('cells: ', cells);
+    await fetch('/cells', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ cells }),
+    });
+    
+  }
+);
+
+export type CellData = {
+  [key: string]: Cell;
+};
+export interface CellState {
   loading: boolean;
-  error: string | null;
+  error: string | null | undefined;
   order: string[];
-  data: {
-    [key: string]: Cell;
-  };
+  data: CellData;
 }
 
 const initCellSlice: CellState = {
@@ -83,6 +111,52 @@ const cellSlice = createSlice({
       state.data[id].content = content;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCells.pending, (state, action) => {
+        state = {
+          loading: true,
+          error: null,
+          order: [],
+          data: {},
+        };
+      })
+      .addCase(fetchCells.fulfilled, (state, action) => {
+        console.log('data: ', action.payload);
+        state.loading = false;
+        state.order = action.payload.map((cell: Cell) => cell.id);
+        state.data = action.payload.reduce<CellData>((acc, cell: Cell) => {
+          acc[cell.id] = {
+            id: cell.id,
+            type: cell.type,
+            content: cell.content,
+          };
+          return acc;
+        }, {});
+        state.error = null;
+      })
+      .addCase(fetchCells.rejected, (state, action) => {
+        state = {
+          loading: false,
+          error: action.error.message,
+          order: [],
+          data: {},
+        };
+      })
+      .addCase(postCells.pending, (state, action) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(postCells.fulfilled, (state, action) => {
+        console.log('actin: ', action);
+        state.error = null;
+        state.loading = false;
+      })
+      .addCase(postCells.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
+  },
 });
 
 export const cellsActions = cellSlice.actions;
@@ -92,18 +166,18 @@ const randomId = () => {
   return Math.random().toString(36).substr(2, 5);
 };
 
-interface MoveCellPayload {
+export interface MoveCellPayload {
   id: string;
   direction: MoveCellDirection;
 }
-interface DeleteCellPayload {
+export interface DeleteCellPayload {
   id: string;
 }
-interface InsertCellBeforePayload {
+export interface InsertCellBeforePayload {
   id: string | null;
   type: CellType;
 }
-interface UpdateCellPayload {
+export interface UpdateCellPayload {
   id: string;
   content: string;
 }

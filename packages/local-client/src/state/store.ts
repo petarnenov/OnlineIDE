@@ -12,16 +12,3 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-store.dispatch(
-  cellsActions['insertCellAfter']({
-    id: null,
-    type: 'text',
-  })
-);
-
-store.dispatch(
-  cellsActions['insertCellAfter']({
-    id: null,
-    type: 'code',
-  })
-);

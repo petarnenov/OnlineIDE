@@ -12,7 +12,15 @@ interface CodeCellProps {
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const currentBundle = useAppSelector((state) => state.bundles?.[cell.id]);
-  const { updateCell, createBundle } = useActions();
+  const {order,data} = useAppSelector((state) => state.cells);
+  const { updateCell, createBundle, postCells } = useActions();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      postCells();
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [JSON.stringify(order),JSON.stringify(data), postCells]);
 
   useEffect(() => {
     if (!currentBundle) {
@@ -37,7 +45,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
       >
         <Resizable direction="horizontal">
           <CodeEditor
-            initialValue={''}
+            initialValue={cell.content}
             onChange={(value) => updateCell({ id: cell.id, content: value })}
           />
         </Resizable>
