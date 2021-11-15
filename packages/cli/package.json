@@ -1,6 +1,6 @@
 {
   "name": "@pnp-js/cli",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "",
   "files": [
     "dist"
@@ -23,10 +23,10 @@
     "@pnp-js/local-client": "^1.0.0"
   },
   "devDependencies": {
-    "@pnp-js/local-api": "^1.4.0",
+    "@pnp-js/local-api": "^1.5.0",
+    "@types/node": "^16.11.7",
     "commander": "^8.3.0",
     "esbuild": "^0.13.13",
-    "@types/node": "^16.11.7",
     "typescript": "^4.4.4"
   },
   "repository": "https://github.com/petarnenov/portfolioProject"
