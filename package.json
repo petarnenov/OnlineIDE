@@ -1,10 +1,12 @@
 {
   "name": "root",
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "lerna run start --parallel",
     "format": "lerna run format --parallel",
-    "format:check":"lerna run format:check --parallel",
+    "format:check": "lerna run format:check --parallel",
     "build:check": "lerna run build:check --parallel",
     "lerna:version": "lerna version --conventional-commits",
     "prepare": "husky install"
