@@ -1,1 +1,0 @@
-[{"id":"wpsyz","type":"code","content":"render(\"kur\")\nconst a = 12\n"},{"id":"jzw5p","type":"text","content":"### between kurs"},{"id":"5yavr","type":"code","content":"render(\"dva kura\")\nrender(a)"}]
