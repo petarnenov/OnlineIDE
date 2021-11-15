@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/petarnenov/portfolioProject/compare/@pnp-js/cli@1.5.1...@pnp-js/cli@1.5.2) (2021-11-15)
+
+
+### Bug Fixes
+
+* remove notebook.js ([d0efe45](https://github.com/petarnenov/portfolioProject/commit/d0efe456ac0bffe3cd055dc0d46374451b471aa4))
+
+
+
+
+
 # 1.5.0 (2021-11-15)
 
 
