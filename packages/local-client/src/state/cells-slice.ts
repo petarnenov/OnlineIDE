@@ -6,7 +6,6 @@ export const fetchCells = createAsyncThunk<Cell[], void, { state: RootState }>(
   'fetchCells',
   async () => {
     const result: Cell[] = await (await fetch('/cells')).json();
-    console.error('result: ', result);
     return result;
   }
 );
@@ -16,7 +15,7 @@ export const postCells = createAsyncThunk<void, void, { state: RootState }>(
   async (_, { getState }) => {
     const { order, data } = getState().cells;
     const cells = order.map((key) => data[key]);
-    console.log('cells: ', cells);
+
     await fetch('/cells', {
       method: 'POST',
       headers: {
@@ -24,7 +23,6 @@ export const postCells = createAsyncThunk<void, void, { state: RootState }>(
       },
       body: JSON.stringify({ cells }),
     });
-    
   }
 );
 
@@ -52,6 +50,7 @@ const cellSlice = createSlice({
     [ActionType.MOVE_CELL]: (state, action: PayloadAction<MoveCellPayload>) => {
       const { direction, id } = action.payload;
       const index = state.order.findIndex((orderId) => orderId === id);
+
       if (index === -1) return;
 
       const swapIndex = direction === 'up' ? index - 1 : index + 1;
@@ -72,7 +71,7 @@ const cellSlice = createSlice({
         swap();
         return;
       }
-      if (index > 0 && index < state.order.length - 2) {
+      if (index !== 0 && index < state.order.length - 1) {
         swap();
         return;
       }
@@ -122,7 +121,6 @@ const cellSlice = createSlice({
         };
       })
       .addCase(fetchCells.fulfilled, (state, action) => {
-        console.log('data: ', action.payload);
         state.loading = false;
         state.order = action.payload.map((cell: Cell) => cell.id);
         state.data = action.payload.reduce<CellData>((acc, cell: Cell) => {
@@ -148,7 +146,6 @@ const cellSlice = createSlice({
         state.error = null;
       })
       .addCase(postCells.fulfilled, (state, action) => {
-        console.log('actin: ', action);
         state.error = null;
         state.loading = false;
       })

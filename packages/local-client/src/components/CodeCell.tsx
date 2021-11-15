@@ -12,15 +12,7 @@ interface CodeCellProps {
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const currentBundle = useAppSelector((state) => state.bundles?.[cell.id]);
-  const {order,data} = useAppSelector((state) => state.cells);
-  const { updateCell, createBundle, postCells } = useActions();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      postCells();
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [JSON.stringify(order),JSON.stringify(data), postCells]);
+  const { updateCell, createBundle } = useActions();
 
   useEffect(() => {
     if (!currentBundle) {

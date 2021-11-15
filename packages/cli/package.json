@@ -4,6 +4,8 @@
   "description": "",
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
+    "format":"prettier ./src -w",
+    "build:check":"tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

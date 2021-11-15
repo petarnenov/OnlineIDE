@@ -1,1 +1,1 @@
-[{"id":"7yjm6","type":"text","content":"### Hello"},{"id":"pi5s9","type":"code","content":"import React from \"react\"\nimport ReactDOM from \"react-dom\"\n\nconst G = <h1>Hello</h1>\n\nrender(G)"},{"id":"bkcfa","type":"text","content":"### Hello 2"}]
+[{"id":"wpsyz","type":"code","content":"render(\"kur\")\nconst a = 12\n"},{"id":"jzw5p","type":"text","content":"### between kurs"},{"id":"5yavr","type":"code","content":"render(\"dva kura\")\nrender(a)"}]

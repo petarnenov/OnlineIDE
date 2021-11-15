@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "start": "lerna run start --parallel",
+    "format": "lerna run format --parallel",
+    "build:check": "lerna run build:check --parallel",
     "lerna:version": "lerna version --conventional-commits"
   },
   "devDependencies": {

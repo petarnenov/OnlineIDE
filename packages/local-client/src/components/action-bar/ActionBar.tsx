@@ -1,7 +1,6 @@
 import './action-bar.css';
 import React from 'react';
 import { useActions } from '../../hooks';
-import { postCells } from '../../state';
 
 interface ActionBarProps {
   id: string;
@@ -9,15 +8,15 @@ interface ActionBarProps {
 
 // TODO: refactor to reusable action button component
 const ActionBar: React.FC<ActionBarProps> = ({ id }) => {
-  const { moveCell, deleteCell, postCells } = useActions();
+  const { moveCell, deleteCell } = useActions();
 
   return (
     <div className="action-bar">
+      <span style={{ marginRight: '5px' }}>ID: {id}</span>
       <button
         className="button is-primary is-small"
         onClick={() => {
           moveCell({ id, direction: 'up' });
-          postCells();
         }}
       >
         <span className="icon">
@@ -27,8 +26,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ id }) => {
       <button
         className="button is-primary is-small"
         onClick={() => {
-          moveCell({ id, direction: 'down' })
-          postCells()
+          moveCell({ id, direction: 'down' });
         }}
       >
         <span className="icon">
@@ -38,10 +36,8 @@ const ActionBar: React.FC<ActionBarProps> = ({ id }) => {
       <button
         className="button is-primary is-small"
         onClick={() => {
-          deleteCell({ id })
-          postCells()
-        }
-        }
+          deleteCell({ id });
+        }}
       >
         <span className="icon">
           <i className="fas fa-times"></i>
