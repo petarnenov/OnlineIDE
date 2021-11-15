@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/petarnenov/portfolioProject/compare/@pnp-js/cli@1.5.2...@pnp-js/cli@1.5.3) (2021-11-15)
+
+
+### Bug Fixes
+
+* comment in first cli line ([e6c4558](https://github.com/petarnenov/portfolioProject/commit/e6c455898c168f62768baf14ee532904c97754ee))
+
+
+
+
+
 ## [1.5.2](https://github.com/petarnenov/portfolioProject/compare/@pnp-js/cli@1.5.1...@pnp-js/cli@1.5.2) (2021-11-15)
 
 
