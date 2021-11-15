@@ -1,6 +1,6 @@
 {
   "name": "local-client",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@monaco-editor/react": "^4.3.1",
@@ -34,7 +34,7 @@
     "eject": "react-scripts eject",
     "format": "prettier ./src -w",
     "format:check": "prettier --check ./src",
-    "build:check": "tsc --noEmit",    
+    "build:check": "tsc --noEmit",
     "serve": "node local-api.js"
   },
   "eslintConfig": {
@@ -58,7 +58,7 @@
   "devDependencies": {
     "@types/localforage": "^0.0.34",
     "@types/react-redux": "^7.1.20",
-    "@types/react-resizable": "^1.7.4",  
+    "@types/react-resizable": "^1.7.4",
     "monaco-editor": "^0.30.0",
     "prettier": "^2.4.1"
   },
