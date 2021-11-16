@@ -1,13 +1,1 @@
 GET http://localhost:1971/cells
-
-###
-POST http://localhost:1971/cells HTTP/1.1
-Content-Type: application/json
-
-{
-    "cells":[
-    "id":"1212",
-    "type":"code",
-    "content":"const a = 1"
-    ]
-}
