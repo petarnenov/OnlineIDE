@@ -1,6 +1,6 @@
 {
   "name": "@pnp-js/cli",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -24,7 +24,7 @@
     "@pnp-js/local-client": "^0.3.2"
   },
   "devDependencies": {
-    "@pnp-js/local-api": "^1.5.3",
+    "@pnp-js/local-api": "^1.5.4",
     "@types/node": "^16.11.7",
     "commander": "^8.3.0",
     "esbuild": "^0.13.13",
