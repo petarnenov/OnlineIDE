@@ -1,6 +1,6 @@
 {
   "name": "@pnp-js/cli",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -15,7 +15,7 @@
     "format": "prettier ./src -w",
     "format:check": "prettier --check ./src",
     "build:check": "tsc --noEmit",
-    "prepublish": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""       
+    "prepublish": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "keywords": [],
   "author": "",
