@@ -21,7 +21,7 @@ const bundle = async (rawCode: string) => {
       service = 'pending';
       await esbuild.initialize({
         worker: true,
-        wasmURL: 'https://unpkg.com/esbuild-wasm/esbuild.wasm',
+        wasmURL: 'https://unpkg.com/esbuild-wasm@0.13.13/esbuild.wasm',
       });
       service = 'up';
     }
