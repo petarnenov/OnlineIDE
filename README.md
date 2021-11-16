@@ -10,5 +10,12 @@ All of your changes get saved to file you opened with. So if you ran
 ```bash
 npx @pnp-js/cli serve myNotebook.js
 ```
-all of the code and text will save to file **myNotebook.js** file.
+all of the code and text will save to file **myNotebook.js** file.  
+- You can run it with default settings
+    - **filename**=notebook.js
+    - **--port,-p**=3003
+```bash
+npx @pnp-js/cli serve
+```
+
 
