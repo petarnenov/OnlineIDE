@@ -15,7 +15,7 @@
     "format": "prettier ./src -w",
     "format:check": "prettier --check ./src",
     "build:check": "tsc --noEmit",
-    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+    "prepublish": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""       
   },
   "keywords": [],
   "author": "",
