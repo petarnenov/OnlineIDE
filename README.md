@@ -1,4 +1,4 @@
-# Project allow writing javascript code, execute it and add documentation using markdown  
+# The Project allows writing javascript code, execute it and add documentation using markdown  
 
 - Click in any text or editor cell to edit it
 - The code in each code editor is all joined into one file. If you define a variable in cell upper cell, you can refer to it in any following code cell
