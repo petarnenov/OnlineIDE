@@ -18,4 +18,77 @@ all of the code and text will save to file **myNotebook.js** file.
 npx @pnp-js/cli serve
 ```
 
+## Example  
+ - Add code editor cell <+ Code>  
+ - Copy/Paste  
+```javascript
+import { useState, useMemo, useRef } from 'react';
+
+const Input = ({ label, input, button }) => {
+  const inputRef = useRef();
+  return (
+    <>
+      <label htmlFor="input-title">{label.textContent}</label>
+      <input
+        ref={inputRef}
+        id="input-title"
+        type="text"
+        placeholder={input.placeholder}
+      />
+      <button
+        onClick={() => {
+          button.onClick(inputRef.current.value);
+          inputRef.current.value = '';
+        }}
+      >
+        {button.textContent}
+      </button>
+    </>
+  );
+};
+
+const Books = ({ titles }) => {
+  const books = titles.map((book, index) => (
+    <li key={book}>
+      {index + 1}.{book}
+    </li>
+  ));
+
+  return <ul>{books}</ul>;
+};
+
+const BookForm = () => {
+  const [titles, setTitles] = useState([]);
+  const props = useMemo(
+    () => ({
+      label: {
+        textContent: 'Title',
+      },
+      input: {
+        placeholder: 'enter title',
+      },
+      button: {
+        textContent: 'Add Book',
+        onClick: (title) => setTitles((prev) => [...prev, title]),
+      },
+    }),
+    []
+  );
+
+  return (
+    <>
+      <h2>Book Form</h2>
+      <Input {...props} />
+      <Books titles={titles} />
+    </>
+  );
+};
+
+render(
+  <>
+    <BookForm />
+  </>
+);
+```
+
 
