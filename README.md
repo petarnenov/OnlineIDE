@@ -1,9 +1,9 @@
 # The Project allows writing javascript code, execute it and add documentation using markdown  
 
-- Click in any text or editor cell to edit it
-- The code in each code editor is all joined into one file. If you define a variable in cell upper cell, you can refer to it in any following code cell
+- Click in any text or code editor cell to edit it
+- The code in each code editor is all joined into one file. If you define a variable in upper editor, you can refer to it in any following code editors
 - You can show any React component calling **render** function. This function is build into environment.
-- You can reorder, add or delete text and code cells using the buttons on the top right
+- You can reorder, add or delete text and code editor cells using the buttons on the top right
 
 All of your changes get saved to file you opened with. So if you ran 
 
